@@ -31,7 +31,44 @@ namespace LoginPanel
 
         private void Btn_login_Click(object sender, RoutedEventArgs e)
         {
+            string login = txtbox_email.Text;
+            string password = txtbox_password.Text;
+            string sql;
+            if (login.Length > 0 && password.Length > 0)
+            {
+                sql = $"SELECT TOP 1 1 FROM LOGINS WHERE Login = '{login}'";
+                DataTable result = DbConnection.Get_DataTable(sql);
+                if (result.Rows.Count != 0 && login.Length > 0)
+                {
+                    if (txtbox_password.Text.Length > 0)
+                    {
+                        sql = $"SELECT Top 1 Password from LOGINS WHERE Login = '{login}'";
+                        result.Clear();
+                        result = DbConnection.Get_DataTable(sql);
 
+                        if (result.Rows[0].Field<string>("Password") == password)
+                        {
+                            MessageBox.Show("Zalogowano");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Błędne hasło");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Musisz podać haslo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nie odnaleziono adresu email");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Musisz podać login i hasło");
+            }
         }
 
         private void Btn_register__Click(object sender, RoutedEventArgs e)

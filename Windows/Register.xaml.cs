@@ -31,18 +31,27 @@ namespace LoginPanel.Windows
             string login = txtbox_email.Text;
             string password = txtbox_password.Text;
             string sql;
-            sql = $"SELECT TOP 1 1 FROM LOGINS WHERE Login = '{login}'";
-            DataTable result = DbConnection.Get_DataTable(sql);
-            if (result.Rows.Count != 0)
+            if (login.Length > 0 && password.Length > 0)
             {
-                MessageBox.Show("Podany email już istnieje w bazie danych");
+                sql = $"SELECT TOP 1 1 FROM LOGINS WHERE Login = '{login}'";
+                DataTable result = DbConnection.Get_DataTable(sql);
+                if (result.Rows.Count != 0)
+                {
+                    MessageBox.Show("Podany email już istnieje w bazie danych");
+                }
+                else
+                {
+                    sql = $"INSERT INTO LOGINS (Login, Password) VALUES ('{login}', '{password}')";
+                    DbConnection.ExecuteSQL(sql);
+                    MessageBox.Show("Dodano nowego użytkownika");
+                    txtbox_email.Clear();
+                    txtbox_password.Clear();
+                    Close();
+                }
             }
             else
             {
-                sql = $"INSERT INTO LOGINS (Login, Password) VALUES ('{login}', '{password}')";
-                DbConnection.ExecuteSQL(sql);
-                MessageBox.Show("Dodano nowego użytkownika");
-                Close();
+                MessageBox.Show("Musisz podać login i hasło");
             }
         }
         
