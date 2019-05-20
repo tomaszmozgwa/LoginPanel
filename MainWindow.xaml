@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="250">
+        Title="Logowanie" Height="350" Width="250">
     <Grid>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="18,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.174,0.583"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="18,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.174,0.583"/>
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="18,163,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="63,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="63,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" RenderTransformOrigin="0.437,2.46"/>
+        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="23" Margin="63,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBox x:Name="txtbox_login" HorizontalAlignment="Left" Height="23" Margin="63,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" RenderTransformOrigin="0.437,2.46"/>
+        <Button x:Name="btn_login" Content="Zaloguj" HorizontalAlignment="Left" Margin="63,214,0,0" VerticalAlignment="Top" Width="70" Click="Btn_login_Click"/>
+        <Button x:Name="Btn_register" Content="Rejestracja" HorizontalAlignment="Left" Margin="140,214,0,0" VerticalAlignment="Top" Width="70" Click="Btn_register__Click"/>
 
     </Grid>
 </Window>

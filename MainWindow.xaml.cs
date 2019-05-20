@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LoginPanel.Db;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using LoginPanel.Windows;
 
 namespace LoginPanel
 {
@@ -23,6 +27,17 @@ namespace LoginPanel
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Btn_login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_register__Click(object sender, RoutedEventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
         }
     }
 }
