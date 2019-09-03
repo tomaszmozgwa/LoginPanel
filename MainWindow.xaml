@@ -9,9 +9,9 @@
     <Grid>
         <Label Content="Email" HorizontalAlignment="Left" Margin="18,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.174,0.583"/>
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="18,163,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="23" Margin="63,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+        <PasswordBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="23" Margin="63,166,0,0" VerticalAlignment="Top" Width="206"/>
         <TextBox x:Name="txtbox_email" HorizontalAlignment="Left" Height="23" Margin="63,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" RenderTransformOrigin="0.437,2.46"/>
-        <Button x:Name="btn_login" Content="Zaloguj" HorizontalAlignment="Left" Margin="63,214,0,0" VerticalAlignment="Top" Width="70" Click="Btn_login_Click"/>
+        <Button x:Name="btn_login"  IsDefault="True" Content="Zaloguj" HorizontalAlignment="Left" Margin="63,214,0,0" VerticalAlignment="Top" Width="70" Click="Btn_login_Click"/>
         <Button x:Name="Btn_register" Content="Rejestracja" HorizontalAlignment="Left" Margin="140,214,0,0" VerticalAlignment="Top" Width="70" Click="Btn_register__Click"/>
 
     </Grid>

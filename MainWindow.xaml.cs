@@ -27,12 +27,15 @@ namespace LoginPanel
         public MainWindow()
         {
             InitializeComponent();
+            txtbox_email.Focus();
+            txtbox_email.TabIndex = 1;
+            txtbox_password.TabIndex = 2;
         }
 
         private void Btn_login_Click(object sender, RoutedEventArgs e)
         {
             string login = txtbox_email.Text;
-            string password = txtbox_password.Text;
+            string password = txtbox_password.Password;
             string sql;
             if (login.Length > 0 && password.Length > 0)
             {
@@ -40,7 +43,7 @@ namespace LoginPanel
                 DataTable result = DbConnection.Get_DataTable(sql);
                 if (result.Rows.Count != 0 && login.Length > 0)
                 {
-                    if (txtbox_password.Text.Length > 0)
+                    if (txtbox_password.Password.Length > 0)
                     {
                         sql = $"SELECT Top 1 Password from LOGINS WHERE Login = '{login}'";
                         result.Clear();

@@ -24,12 +24,13 @@ namespace LoginPanel.Windows
         public Register()
         {
             InitializeComponent();
+            txtbox_email.Focus();
         }
 
         private void btn_register_Click(object sender, RoutedEventArgs e)
         {
             string login = txtbox_email.Text;
-            string password = txtbox_password.Text;
+            string password = txtbox_password.Password;
             string sql;
             if (login.Length > 0 && password.Length > 0)
             {
@@ -38,6 +39,8 @@ namespace LoginPanel.Windows
                 if (result.Rows.Count != 0)
                 {
                     MessageBox.Show("Podany email już istnieje w bazie danych");
+                    txtbox_email.Clear();
+                    txtbox_password.Clear();
                 }
                 else
                 {

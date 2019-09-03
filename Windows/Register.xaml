@@ -9,10 +9,10 @@
     <Grid Margin="0,0,0,32">
         <Label Content="Adres Email" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
         <Label Content="Hasło" HorizontalAlignment="Left" Margin="26,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.592,0.575"/>
-        <Button x:Name="btn_register" Content="Rejestracja" HorizontalAlignment="Left" Margin="87,136,0,0" VerticalAlignment="Top" Width="110" Click="btn_register_Click"/>
-        <Button x:Name="btn_cancel" Content="Anuluj" HorizontalAlignment="Left" Margin="207,136,0,0" VerticalAlignment="Top" Width="110" Click="Btn_cancel_Click"/>
+        <Button x:Name="btn_register" Content="Rejestracja" IsDefault="True" HorizontalAlignment="Left" Margin="87,136,0,0" VerticalAlignment="Top" Width="110" Click="btn_register_Click"/>
+        <Button x:Name="btn_cancel" Content="Anuluj" IsCancel="True" HorizontalAlignment="Left" Margin="207,136,0,0" VerticalAlignment="Top" Width="110" Click="Btn_cancel_Click"/>
         <TextBox x:Name="txtbox_email" HorizontalAlignment="Left" Height="23" Margin="87,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
-        <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="23" Margin="87,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
+        <PasswordBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="23" Margin="87,86,0,0" VerticalAlignment="Top" Width="230"/>
 
     </Grid>
 </Window>
